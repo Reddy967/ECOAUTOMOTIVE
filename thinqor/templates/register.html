@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-d7p1Lwu25KxvuBvSTZ9IvAz5BwRteXPt1P7Tfa0eb6aSZlDHc6/PY1Cw1TKB2+xU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+<nav  class="navbar navbar-inverse">
+                                <div class="container-fluid" style="background-color:WhiteSmoke">
+                                  <div class="navbar-header">
+                                    <img src="{% static 'images/logo.png' %}" alt="Logo" width="100" height="100" class="d-inline-block align-top">
+                                  </div>
+                                  <marquee class="behaviour-scroll"><h3 style="color:Crimson">Sign Up Here</h3></marquee>
+                                </div>
+</nav>
+
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" method="post">
+				{% csrf_token %}
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="User name" name="username">
+				</div>
+                <div class="login__field">
+					<i class="login__icon fas fa-envelope"></i>
+					<input type="text" class="login__input" placeholder="Email" name="email">
+				</div>
+                <div class="login__field">
+					<i class="login__icon fas fa-phone"></i>
+					<input type="text" class="login__input" placeholder="Phone number" name="phonenumber">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" placeholder="Password" name="password">
+				</div>
+				<button class="button login__submit">
+					<span class="button__text">Sign Up Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+			</form>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

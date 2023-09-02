@@ -1,0 +1,114 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-d7p1Lwu25KxvuBvSTZ9IvAz5BwRteXPt1P7Tfa0eb6aSZlDHc6/PY1Cw1TKB2+xU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logo.png' %}" alt="Logo" width="100" height="100" class="d-inline-block align-top">
+    </a>
+
+    <!-- Search Bar -->
+    <form class="d-flex ms-auto">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <!-- Icons -->
+    <div class="navbar-nav">
+      <a class="nav-link mr-4" href="{% url 'cart_view' user_id %}">
+        <i class="fas fa-shopping-cart fa-lg"></i>
+         <span class="badge badge-pill badge-danger" id="cart-item-count">0</span>
+      </a>
+      <a class="nav-link mr-4" href="#">
+        <i class="fas fa-user fa-lg"></i><br>
+        <span>Dealer</span>
+      </a>
+      <a class="nav-link mr-4" href="#">
+        <i class="fas fa-user fa-lg"></i><br>
+        <span>User</span>
+      </a>
+    </div>
+  </div>
+</nav>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
+    <ul class="navbar-nav navbar-icons">
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="home"><i class="fas fa-home fa-lg" style="height:50; width:50"></i><br><b>Home</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="products"><i class="fas fa-bicycle fa-lg"></i><br><b>Products</b></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle mr-5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-toolbox fa-lg"></i><br>
+          <b>Accessories</b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Helmets</a>
+          <a class="dropdown-item" href="#">Locks</a>
+          <a class="dropdown-item" href="#">Mobile Holder</a>
+          <a class="dropdown-item" href="#">Combos</a>
+          <a class="dropdown-item" href="#">Pumps</a>
+          <a class="dropdown-item" href="#">Side Mirrors</a>
+          <a class="dropdown-item" href="#">Battery BackPack</a>
+          <a class="dropdown-item" href="#">Glows</a>
+          <a class="dropdown-item" href="#">eBike Seat</a>
+          <a class="dropdown-item" href="#">Signal Indicators</a>
+          <a class="dropdown-item" href="#">eBike Cover</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="#"><i class="fas fa-calendar-check fa-lg"></i><br><b>Events</b></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle mr-5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-certificate fa-lg"></i><br>
+          <b>Assurance</b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Warranty</a>
+          <a class="dropdown-item" href="#">Insurance</a>
+          <a class="dropdown-item" href="#">EMI</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="about"><i class="fas fa-address-card fa-lg"></i><br><b>About</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="register"><i class="fas fa-registered fa-lg"></i><br><b>Signup</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="login"><i class="fas fa-lock fa-lg"></i><br><b>Login</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="#"><i class="fab fa-app-store fa-lg"></i><br><b>Virtual Showroom</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mr-5" href="contact"><i class="fas fa-address-card"></i><br><b>Contact Us</b></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <div>
+    <img src="{% static 'images/nav.JPG' %}" class="img-fluid" alt="...">
+  </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+  </body>
+</html>

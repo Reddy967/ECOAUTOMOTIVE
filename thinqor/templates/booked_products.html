@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booked Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card {
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .card-price {
+            font-size: 1.5rem;
+            color: #e76c29;
+            margin-top: 10px;
+        }
+        .btn-continue {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav  class="navbar navbar-inverse">
+                                <div class="container-fluid" style="background-color:WhiteSmoke">
+                                  <div class="navbar-header">
+                                    <img src="{% static 'images/logo.png' %}" alt="Logo" width="100" height="100" class="d-inline-block align-top">
+                                  </div>
+                                </div>
+</nav>
+    <div class="container mt-4">
+        <h1 class="mb-4"></h1>
+        <div class="row">
+            {% for item in booked_products_info %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ item.product.image }}" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:orange">{{ item.product.name }}</h5>
+                        <p class="card-text">{{ item.product.description }}</p>
+                        <p class="card-price">&#8377; {{ item.product.amount }}</p>
+                        <a href="shipping_address" class="btn btn-primary btn-continue">Continue</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS scripts here if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

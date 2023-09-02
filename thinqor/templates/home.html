@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Homepage with Video</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <div class="embed-responsive embed-responsive-16by9">
+            <video controls autoplay loop class="embed-responsive-item">
+                <source src="{% static 'images/home.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Add your content here -->
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading" style="color:orange">The World is Yours <br><span class="text-muted">No Compromise</span></h2>
+            <p class="lead">Performance and design were the keywords during the conception of this super eBike. No compromises were made to keep the pleasure of driving despite constraints.Take advantage of a free track trial to discover it.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="{% static 'images/scanner.png' %}" alt="Generic placeholder image">
+          </div>
+        </div>
+    </main>
+
+    <!-- Add Bootstrap JS and jQuery links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
